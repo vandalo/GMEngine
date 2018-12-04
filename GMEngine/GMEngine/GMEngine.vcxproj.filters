@@ -11,10 +11,44 @@
     <Filter Include="Game Modules">
       <UniqueIdentifier>{3bac0437-4f5b-4993-b6e2-52d5e891e0fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{2d2c5f6b-4fce-4e2e-9c62-c52000263d4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="CModuleWindow.cpp">
+      <Filter>Core Modules</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CHash.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GMEngine.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CModuleWindow.h">
+      <Filter>Core Modules</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="IModule.h">
+      <Filter>Core Modules</Filter>
+    </Text>
   </ItemGroup>
 </Project>
