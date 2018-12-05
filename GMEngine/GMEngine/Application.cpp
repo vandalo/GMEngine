@@ -2,10 +2,12 @@
 #include "Application.h"
 #include "IModule.h"
 #include "CModuleWindow.h"
+#include "CModuleAudio.h"
 
 Application::Application()
 {
 	Add<CModuleWindow>();
+	Add<CModuleAudio>();
 }
 
 Application::~Application()
@@ -17,12 +19,12 @@ bool Application::Init()
 
 	for (auto& module : m_modules)
 	{
-		ret = module.second.get()->Init();
+		ret = module.second->Init();
 	}
 
 	for (auto& module : m_modules)
 	{
-		ret = module.second.get()->Start();
+		ret = module.second->Start();
 	}
 
 	return ret;
@@ -39,7 +41,7 @@ bool Application::CleanUp()
 
 	for (auto& module : m_modules)
 	{
-		ret = module.second.get()->CleanUp();
+		delete module.second;
 	}
 
 	return ret;

@@ -28,6 +28,9 @@
     <ClCompile Include="CModuleWindow.cpp">
       <Filter>Core Modules</Filter>
     </ClCompile>
+    <ClCompile Include="CModuleAudio.cpp">
+      <Filter>Core Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -43,6 +46,9 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="CModuleWindow.h">
+      <Filter>Core Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="CModuleAudio.h">
       <Filter>Core Modules</Filter>
     </ClInclude>
   </ItemGroup>

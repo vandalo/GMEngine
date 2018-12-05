@@ -4,6 +4,7 @@
 #include "SDL/include/SDL.h"
 
 CModuleWindow::CModuleWindow()
+	: IModule()
 {
 }
 

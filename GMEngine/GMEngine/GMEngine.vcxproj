@@ -138,6 +138,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="CModuleWindow.cpp" />
+    <ClCompile Include="CModuleAudio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="IModule.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="GMEngine.h" />
     <ClInclude Include="CModuleWindow.h" />
+    <ClInclude Include="CModuleAudio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

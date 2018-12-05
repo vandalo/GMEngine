@@ -21,23 +21,24 @@ public:
 		auto it = m_modules.find(hash);
 		if (it == m_modules.end())
 		{
-			m_modules[hash] = std::make_unique<T>();
+			m_modules[hash] = new T();
 		}
 	}
 
 	template<typename T>
-	IModule& GetModule()
+	T* GetModule()
 	{
-		std:size_t hash = CHash<T>::Hash();
+		std::size_t hash = CHash<T>::Hash();
 		auto it = m_modules.find(hash);
-		if (it == m_modules.end())
+		if (it != m_modules.end())
 		{
-			return m_modules[hash];
+			LOG("Try to get non-existing module");
+			SDL_assert(true);
+			return nullptr;
 		}
-		LOG("Try to get non-existing module");
-		SDL_assert(true);
+		return static_cast<T*>(m_modules[hash]);
 	}
 
 private:
-	std::unordered_map<std::size_t, std::unique_ptr<IModule>> m_modules;
+	std::unordered_map<std::size_t, IModule*> m_modules;
 };
