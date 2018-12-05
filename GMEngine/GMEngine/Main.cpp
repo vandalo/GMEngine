@@ -1,4 +1,6 @@
 #include "GMEngine.h"
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <memory>
 
