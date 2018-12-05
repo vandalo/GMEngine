@@ -10,7 +10,8 @@ If you want to colaborate follow this steps:
 [slack channel](https://join.slack.com/t/gmengine/shared_invite/enQtNDk1MjM2NzA1MTIwLWE0M2MxYTcxMDE3OTEyOTE4OGZlYjc2NDIzY2IwNGJiZDYzZmZkNDQ0ZmQ5YmYyMmVkZDk3ZjAwZDYxNWRiZjE).
 
 > 2. Ask to be part of the group
-We will add you to trello group so you move the tasks 
+Send a message into NewMember group, with the email you use for github.
+We will add you to trello group so you move the tasks. 
 
 > 3. Do a task
 You can pick any task from sprint gcolumn and move it into the InProgress
