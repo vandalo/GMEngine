@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "SDL/include/SDL.h"
@@ -7,5 +8,6 @@
 
 int main(int argc, char ** argv)
 {
+	printf("test merge branch into master");
 	return 0;
 }
