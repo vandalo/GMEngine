@@ -8,6 +8,5 @@
 
 int main(int argc, char ** argv)
 {
-	printf("test merge branch into master");
 	return 0;
 }
