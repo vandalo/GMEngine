@@ -32,16 +32,16 @@ bool CModuleWindow::Init()
 			flags |= SDL_WINDOW_FULLSCREEN;
 		}
 
-		window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+		m_window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
 
-		if (window == nullptr)
+		if (m_window == nullptr)
 		{
 			LOG("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 			ret = false;
 		}
 		else
 		{
-			screen_surface = SDL_GetWindowSurface(window);
+			m_screenSurface = SDL_GetWindowSurface(m_window);
 		}
 	}
 
@@ -52,9 +52,9 @@ bool CModuleWindow::CleanUp()
 {
 	LOG("Destroying SDL window and quitting all SDL systems");
 
-	if (window != nullptr)
+	if (m_window != nullptr)
 	{
-		SDL_DestroyWindow(window);
+		SDL_DestroyWindow(m_window);
 	}
 
 	SDL_Quit();
