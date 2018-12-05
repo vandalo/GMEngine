@@ -18,6 +18,7 @@ We will add you to trello group so you move the tasks.
 > 3. Do a task.
 
 You can pick any task from sprint gcolumn and move it into the InProgress
+Fork the repo
 You have to create a branch from [master](https://github.com/vandalo/GMEngine)
 
 > 4. Create Pull Request.
