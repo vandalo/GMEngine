@@ -11,20 +11,12 @@ class CModuleWindow : public IModule
 public:
 
 	CModuleWindow();
-
-	// Destructor
 	virtual ~CModuleWindow();
 
-	// Called before quitting
 	bool Init();
-
-	// Called before quitting
 	bool CleanUp();
 
 public:
-	//The window we'll be rendering to
-	SDL_Window* window = nullptr;
-
-	//The surface contained by the window
-	SDL_Surface* screen_surface = nullptr;
+	SDL_Window* m_window = nullptr;
+	SDL_Surface* m_screenSurface = nullptr;
 };
