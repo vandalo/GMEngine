@@ -28,7 +28,7 @@ public:
 
 private:
 
-	Mix_Music*	m_music;
+	Mix_Music*	m_music = nullptr;
 	std::vector<Mix_Chunk*>	m_fx;
 };
 

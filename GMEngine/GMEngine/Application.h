@@ -21,7 +21,7 @@ public:
 		auto it = m_modules.find(hash);
 		if (it == m_modules.end())
 		{
-			m_modules[hash] = new T();
+			m_modules[hash] = std::make_unique<T>();
 		}
 	}
 
@@ -30,15 +30,15 @@ public:
 	{
 		std::size_t hash = CHash<T>::Hash();
 		auto it = m_modules.find(hash);
-		if (it != m_modules.end())
+		if (it == m_modules.end())
 		{
 			LOG("Try to get non-existing module");
-			SDL_assert(true);
+			SDL_assert(it != m_modules.end());
 			return nullptr;
 		}
-		return static_cast<T*>(m_modules[hash]);
+		return static_cast<T*>(m_modules[hash].get());
 	}
 
 private:
-	std::unordered_map<std::size_t, IModule*> m_modules;
+	std::unordered_map<std::size_t, std::unique_ptr<IModule>> m_modules;
 };
