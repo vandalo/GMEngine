@@ -9,6 +9,7 @@
 #pragma comment( lib, "SDL/libx86/SDL2main.lib" )
 
 #include "Application.h"
+#include "CModuleAudio.h"
 
 std::unique_ptr<Application> app;
 
@@ -41,6 +42,8 @@ int main(int argc, char ** argv)
 			}
 			else
 			{
+				CModuleAudio* ma = app.get()->GetModule<CModuleAudio>();
+				ma->PlayMusic("music/4WinningRun.ogg", 0.f);
 				state = MAIN_UPDATE;
 			}
 			break;

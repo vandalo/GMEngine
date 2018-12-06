@@ -26,16 +26,17 @@ public:
 	}
 
 	template<typename T>
-	IModule& GetModule()
+	T* GetModule()
 	{
-		std:size_t hash = CHash<T>::Hash();
+		std::size_t hash = CHash<T>::Hash();
 		auto it = m_modules.find(hash);
 		if (it == m_modules.end())
 		{
-			return m_modules[hash];
+			LOG("Try to get non-existing module");
+			SDL_assert(it != m_modules.end());
+			return nullptr;
 		}
-		LOG("Try to get non-existing module");
-		SDL_assert(true);
+		return static_cast<T*>(m_modules[hash].get());
 	}
 
 private:
