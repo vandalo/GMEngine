@@ -17,7 +17,6 @@ CModuleAudio::~CModuleAudio()
 {
 }
 
-// Called before render is available
 bool CModuleAudio::Init()
 {
 	LOG("Loading Audio Mixer");
@@ -30,7 +29,6 @@ bool CModuleAudio::Init()
 		ret = false;
 	}
 
-	// load support for the OGG format
 	int flags = MIX_INIT_OGG;
 	int init = Mix_Init(flags);
 
@@ -40,7 +38,6 @@ bool CModuleAudio::Init()
 		ret = false;
 	}
 
-	//Initialize SDL_mixer
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
 	{
 		LOG("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
@@ -50,7 +47,6 @@ bool CModuleAudio::Init()
 	return ret;
 }
 
-// Called before quitting
 bool CModuleAudio::CleanUp()
 {
 	LOG("Freeing sound FX, closing Mixer and Audio subsystem");
@@ -70,7 +66,6 @@ bool CModuleAudio::CleanUp()
 	return true;
 }
 
-// Play a music file
 bool CModuleAudio::PlayMusic(const char* path, float fade_time)
 {
 	bool ret = true;
@@ -86,7 +81,6 @@ bool CModuleAudio::PlayMusic(const char* path, float fade_time)
 			Mix_HaltMusic();
 		}
 
-		// this call blocks until fade out is done
 		Mix_FreeMusic(m_music);
 	}
 
@@ -136,14 +130,12 @@ bool CModuleAudio::PauseMusic(float fade_time)
 			Mix_HaltMusic();
 		}
 
-		// this call blocks until fade out is done
 		Mix_FreeMusic(m_music);
 	}
 
 	return true;
 }
 
-// Load WAV
 unsigned int CModuleAudio::LoadFx(const char* path)
 {
 	unsigned int ret = 0;
@@ -162,14 +154,12 @@ unsigned int CModuleAudio::LoadFx(const char* path)
 	return ret;
 }
 
-// Play WAV
 bool CModuleAudio::PlayFx(unsigned int id, int repeat)
 {
 	bool ret = false;
 
 	if (id < m_fx.size())
 	{
-		//Mix_PlayChannel(-1, fx[id], repeat);
 		Mix_PlayChannel(id, m_fx[id], repeat);
 		ret = true;
 	}

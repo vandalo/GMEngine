@@ -39,10 +39,10 @@ bool Application::CleanUp()
 {
 	bool ret = true;
 	
-	/*for (auto& module : m_modules)
+	for (auto& module : m_modules)
 	{
-		delete module.second;
-	}*/
+		delete module.second.get();
+	}
 
 	return ret;
 }
