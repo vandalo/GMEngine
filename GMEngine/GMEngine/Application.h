@@ -42,3 +42,5 @@ public:
 private:
 	std::unordered_map<std::size_t, std::unique_ptr<IModule>> m_modules;
 };
+
+extern std::unique_ptr<Application> app;

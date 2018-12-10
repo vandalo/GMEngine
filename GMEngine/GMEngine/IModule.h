@@ -46,7 +46,7 @@ public:
 		return true;
 	}
 
-	virtual bool Update(const float deltaTime)
+	virtual bool Update(float deltaTime)
 	{
 		return true;
 	}
