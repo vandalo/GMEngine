@@ -32,7 +32,6 @@ public:
 		auto it = m_modules.find(hash);
 		if (it == m_modules.end())
 		{
-			LOG("Try to get non-existing module");
 			SDL_assert(it != m_modules.end());
 			return nullptr;
 		}

@@ -5,7 +5,10 @@ VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMEngine", "GMEngine\GMEngine.vcxproj", "{DD0186AF-8FD7-48E8-BA7E-F4CAE839BCA2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMEditor", "GMEditor\GMEditor.vcxproj", "{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GMEditor", "GMEditor\GMEditor.vcxproj", "{B2FE662E-140D-4089-BF83-E96B2C1F26AA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DD0186AF-8FD7-48E8-BA7E-F4CAE839BCA2} = {DD0186AF-8FD7-48E8-BA7E-F4CAE839BCA2}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,16 +26,19 @@ Global
 		{DD0186AF-8FD7-48E8-BA7E-F4CAE839BCA2}.Release|x64.Build.0 = Release|x64
 		{DD0186AF-8FD7-48E8-BA7E-F4CAE839BCA2}.Release|x86.ActiveCfg = Release|Win32
 		{DD0186AF-8FD7-48E8-BA7E-F4CAE839BCA2}.Release|x86.Build.0 = Release|Win32
-		{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}.Debug|x64.ActiveCfg = Debug|x64
-		{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}.Debug|x64.Build.0 = Debug|x64
-		{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}.Debug|x86.ActiveCfg = Debug|Win32
-		{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}.Debug|x86.Build.0 = Debug|Win32
-		{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}.Release|x64.ActiveCfg = Release|x64
-		{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}.Release|x64.Build.0 = Release|x64
-		{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}.Release|x86.ActiveCfg = Release|Win32
-		{FB4EA6D4-BEAB-4FEB-BA94-76D94EA947C6}.Release|x86.Build.0 = Release|Win32
+		{B2FE662E-140D-4089-BF83-E96B2C1F26AA}.Debug|x64.ActiveCfg = Debug|x64
+		{B2FE662E-140D-4089-BF83-E96B2C1F26AA}.Debug|x64.Build.0 = Debug|x64
+		{B2FE662E-140D-4089-BF83-E96B2C1F26AA}.Debug|x86.ActiveCfg = Debug|Win32
+		{B2FE662E-140D-4089-BF83-E96B2C1F26AA}.Debug|x86.Build.0 = Debug|Win32
+		{B2FE662E-140D-4089-BF83-E96B2C1F26AA}.Release|x64.ActiveCfg = Release|x64
+		{B2FE662E-140D-4089-BF83-E96B2C1F26AA}.Release|x64.Build.0 = Release|x64
+		{B2FE662E-140D-4089-BF83-E96B2C1F26AA}.Release|x86.ActiveCfg = Release|Win32
+		{B2FE662E-140D-4089-BF83-E96B2C1F26AA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC300653-4EB2-4654-8B19-AB3EC97D5C75}
 	EndGlobalSection
 EndGlobal
