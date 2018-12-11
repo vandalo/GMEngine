@@ -14,6 +14,12 @@ public:
 	bool Update();
 	bool CleanUp();
 
+	static std::shared_ptr<Application> getInstance()
+	{
+		static std::shared_ptr<Application> instance(new Application());
+		return instance;
+	}
+
 	template<typename T>
 	void Add()
 	{
@@ -32,8 +38,6 @@ public:
 		auto it = m_modules.find(hash);
 		if (it == m_modules.end())
 		{
-			LOG("Try to get non-existing module");
-			SDL_assert(it != m_modules.end());
 			return nullptr;
 		}
 		return static_cast<T*>(m_modules[hash].get());
@@ -42,5 +46,3 @@ public:
 private:
 	std::unordered_map<std::size_t, std::unique_ptr<IModule>> m_modules;
 };
-
-extern std::unique_ptr<Application> app;

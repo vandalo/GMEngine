@@ -7,8 +7,6 @@
 #include "Glew/include/glew.h"
 #include "SDL/include/SDL_opengl.h"
 
-#pragma comment( lib, "Glew/libx86/glew32.lib" )
-
 CModuleRender::CModuleRender() : IModule() {}
 
 CModuleRender::~CModuleRender() {}
@@ -17,11 +15,12 @@ bool CModuleRender::Init()
 {
 	bool ret = true;
 
-	//SDL_GLContext context = SDL_GL_CreateContext(app.get()->GetModule<CModuleWindow>()->m_window);
-	/*if (!context) {
+	SDL_GLContext context = SDL_GL_CreateContext(Application::getInstance()->GetModule<CModuleWindow>()->m_window);
+	if (!context)
+	{
 		LOG("Couldn't create context: %s\n", SDL_GetError());
 		ret = false;
-	}*/
+	}
 
 	GLenum err = glewInit();
 	if (GLEW_OK != err)
@@ -75,7 +74,7 @@ bool CModuleRender::PostUpdate(float deltaTime)
 {
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	renderObjects();
-	//SDL_GL_SwapWindow(app.get()->GetModule<CModuleWindow>()->m_window);
+	SDL_GL_SwapWindow(Application::getInstance()->GetModule<CModuleWindow>()->m_window);
 	return true;
 }
 
