@@ -38,6 +38,7 @@ public:
 		auto it = m_modules.find(hash);
 		if (it == m_modules.end())
 		{
+			SDL_assert(it != m_modules.end());
 			return nullptr;
 		}
 		return static_cast<T*>(m_modules[hash].get());
