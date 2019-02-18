@@ -14,6 +14,12 @@ public:
 	bool Update();
 	bool CleanUp();
 
+	static std::shared_ptr<Application> getInstance()
+	{
+		static std::shared_ptr<Application> instance(new Application());
+		return instance;
+	}
+
 	template<typename T>
 	void Add()
 	{

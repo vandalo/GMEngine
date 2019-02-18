@@ -11,8 +11,6 @@
 #include "Application.h"
 #include "CModuleAudio.h"
 
-std::unique_ptr<Application> app;
-
 enum main_states
 {
 	MAIN_CREATION,
@@ -24,6 +22,7 @@ enum main_states
 
 int main(int argc, char ** argv)
 {
+	std::shared_ptr<Application> app = Application::getInstance();
 	main_states state = MAIN_CREATION;
 
 	while (state != MAIN_EXIT)
@@ -31,7 +30,6 @@ int main(int argc, char ** argv)
 		switch (state)
 		{
 		case MAIN_CREATION:
-			app = std::make_unique<Application>();
 			state = MAIN_START;
 			break;
 		case MAIN_START:

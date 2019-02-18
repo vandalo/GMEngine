@@ -8,14 +8,10 @@
 
 CModuleAudio::CModuleAudio()
 	: IModule()
-	, m_music(nullptr)
-{
-}
+	, m_music(nullptr) {}
 
 
-CModuleAudio::~CModuleAudio()
-{
-}
+CModuleAudio::~CModuleAudio() {}
 
 bool CModuleAudio::Init()
 {
